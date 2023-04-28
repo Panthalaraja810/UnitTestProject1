@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Security.Policy;
 
 namespace UnitTestProject1.TestScripts
 {
@@ -17,6 +18,7 @@ namespace UnitTestProject1.TestScripts
         {
             IWebDriver driver = new OpenQA.Selenium.Chrome.ChromeDriver();
             driver.Url = "https://www.google.com/";
+            Console.WriteLine(  driver.Url);
         }
     }
 }

@@ -60,6 +60,7 @@
     <Compile Include="TestScripts\Practise1.cs" />
     <Compile Include="TestScripts\Practise2.cs" />
     <Compile Include="TestScripts\Practise3.cs" />
+    <Compile Include="TestScripts\Practise4.cs" />
     <Compile Include="TestScripts\WebDriver.cs" />
   </ItemGroup>
   <ItemGroup>
