@@ -51,8 +51,8 @@
     <Reference Include="WebDriver, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Selenium.WebDriver.3.141.0\lib\net45\WebDriver.dll</HintPath>
     </Reference>
-    <Reference Include="WebDriver.Support, Version=3.14.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Selenium.Support.3.14.0\lib\net45\WebDriver.Support.dll</HintPath>
+    <Reference Include="WebDriver.Support, Version=3.141.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Selenium.Support.3.141.0\lib\net45\WebDriver.Support.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -61,7 +61,8 @@
     <Compile Include="TestScripts\Practise2.cs" />
     <Compile Include="TestScripts\Practise3.cs" />
     <Compile Include="TestScripts\Practise4.cs" />
-    <Compile Include="TestScripts\WebDriver.cs" />
+    <Compile Include="TestScripts\Practice5.cs" />
+    <Compile Include="TestScripts\Practise6.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
