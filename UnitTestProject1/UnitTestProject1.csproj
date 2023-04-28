@@ -62,7 +62,7 @@
     <Compile Include="TestScripts\Practise3.cs" />
     <Compile Include="TestScripts\Practise4.cs" />
     <Compile Include="TestScripts\Practice5.cs" />
-    <Compile Include="TestScripts\Practise6.cs" />
+    <Compile Include="TestScripts\UnitTest1.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

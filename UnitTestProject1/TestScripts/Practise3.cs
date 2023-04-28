@@ -22,21 +22,6 @@ namespace UnitTestProject1.TestScripts
             driver.Url = "https://www.selenium.dev/";
            var Url = driver.FindElements(By.XPath("//a"));
 
-            driver.FindElement(By.TagName(""));
-
-
-          IWebElement element = driver.FindElement(By.CssSelector("p"));
-          String text =  element.Text;
-
-           bool isEnabled = element.Enabled;
-
-           bool isSelected =element.Selected;
-          Point loc = element.Location;
-
-          Size size =  element.Size;
-
-           bool isDisplayed = element.Displayed;
-            element.Clear();
         }
 
 
