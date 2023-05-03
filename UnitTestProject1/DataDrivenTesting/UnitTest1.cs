@@ -9,7 +9,6 @@ namespace UnitTestProject1.DataDrivenTesting
     [TestClass]
     public class UnitTest1
     {
-       
         [TestMethod]
         [TestCategory("DataDriven")]
         [Priority(1)]

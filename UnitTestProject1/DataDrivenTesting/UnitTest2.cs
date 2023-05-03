@@ -14,7 +14,7 @@ namespace UnitTestProject1.DataDrivenTesting
             {
                 return new[]
                 {
-                  //  new object[] {1,1,2},
+                    new object[] {1,1,2},
                     new object[] {1,3,3},
                     new object[] {2,2,4},
                 };
@@ -34,7 +34,7 @@ namespace UnitTestProject1.DataDrivenTesting
             {
                 result = true;
             }
-            Assert.IsTrue(result);
+            Assert.IsTrue(result, "result not matching");
         }
     }
 }
