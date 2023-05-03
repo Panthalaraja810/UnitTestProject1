@@ -2,13 +2,10 @@
 using OpenQA.Selenium;
 using System;
 using System.Reflection;
+using System.Security.Cryptography.X509Certificates;
 
 namespace UnitTestProject1.DataDrivenTesting
 {
-
-   
-
-
     [TestClass]
     public class UnitTest1
     {
@@ -34,8 +31,13 @@ namespace UnitTestProject1.DataDrivenTesting
             Console.WriteLine(eTitle+" title not matching");
                 Console.WriteLine(e.StackTrace);
             }
-
-
+            finally
+            {
+                driver.Close();
+                driver.Dispose();
+                Assert.IsTrue(aTitle.Contains(eTitle));
+            }
+            
         }
     }
 }

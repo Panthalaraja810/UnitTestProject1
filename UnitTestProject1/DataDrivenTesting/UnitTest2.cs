@@ -14,8 +14,8 @@ namespace UnitTestProject1.DataDrivenTesting
             {
                 return new[]
                 {
-                    new object[] {1,1,2},
-                    new object[] {1,2,3},
+                  //  new object[] {1,1,2},
+                    new object[] {1,3,3},
                     new object[] {2,2,4},
                 };
             }
@@ -27,7 +27,14 @@ namespace UnitTestProject1.DataDrivenTesting
         [DynamicData(nameof(Tests))]
         public void TestMethod(int a, int b, int c)
         {
+            int multiply =a*b;
+            bool result = false;
 
+            if(multiply == c) 
+            {
+                result = true;
+            }
+            Assert.IsTrue(result);
         }
     }
 }
