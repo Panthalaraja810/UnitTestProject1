@@ -56,6 +56,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataDrivenTesting\UnitTest1.cs" />
+    <Compile Include="DataDrivenTesting\UnitTest2.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TestScripts\Practise1.cs" />
     <Compile Include="TestScripts\Practise2.cs" />
@@ -63,9 +65,8 @@
     <Compile Include="TestScripts\Practise4.cs" />
     <Compile Include="TestScripts\Practice5.cs" />
     <Compile Include="TestScripts\UnitTest1.cs" />
-    <Compile Include="TestScripts\UnitTest2.cs" />
-    <Compile Include="TestScripts\UnitTest3.cs" />
     <Compile Include="TestScripts\UnitTest4.cs" />
+    <Compile Include="TestScripts\UnitTest5.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
