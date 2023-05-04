@@ -1,26 +1,27 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Chrome;
 using System;
 using System.Reflection;
 using System.Security.Cryptography.X509Certificates;
+using System.Security.Policy;
 
 namespace UnitTestProject1.DataDrivenTesting
 {
     [TestClass]
     public class UnitTest1
     {
+        public static IWebDriver driver;
+
         [TestMethod]
-        [TestCategory("DataDriven")]
-        [Priority(1)]
         [DataTestMethod]
-        [DataRow("https://www.facebook.com/", "Facebook")]
-        [DataRow("https://medium.com/", "Medium")]
-        [DataRow("https://www.bbc.com/", "BBC")]
+        [DataRow("https://www.facebook.com/","Facebook")]
+        [DataRow("https://medium.com/","Medium")]
+        [DataRow("https://www.bbc.com/","BBC")]
         public void DataRowAndDataDriven(String url, String eTitle)
         {
-            IWebDriver driver = new OpenQA.Selenium.Chrome.ChromeDriver();
             driver.Url = url;
-         String  aTitle = driver.Title;
+            String  aTitle = driver.Title;
             Console.WriteLine(aTitle);
             try
             {
@@ -37,7 +38,17 @@ namespace UnitTestProject1.DataDrivenTesting
                 driver.Dispose();
                 Assert.IsTrue(aTitle.Contains(eTitle));
             }
-            
         }
+
+        [TestInitialize]
+        [DataTestMethod]
+       
+        public void Initialize()
+        { 
+            driver = new ChromeDriver();
+           
+
+        }
+
     }
 }

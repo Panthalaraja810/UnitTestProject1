@@ -7,6 +7,7 @@ namespace UnitTestProject1.DataDrivenTesting
     [TestClass]
     public class ExcelDataDriven
     {
+
         Spreadsheet sheet; //declaring spreadsheet as global
         [TestMethod]
         [TestCategory("Excel Data fetch")]
@@ -21,7 +22,7 @@ namespace UnitTestProject1.DataDrivenTesting
         [TestCategory("multiple data")]
         public void TestMethod2() //method for fetching multiple datas
         {
-            ;
+            
             Worksheet sh = sheet.Workbook.Worksheets.ByName("Sheet1"); //particular sheet
             int rowNum = sh.UsedRangeRowMax; //this method will fetch the all the rows
             int colNum = sh.UsedRangeColumnMax; //this method will fetch the all the columns
