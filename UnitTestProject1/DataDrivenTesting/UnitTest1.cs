@@ -21,6 +21,7 @@ namespace UnitTestProject1.DataDrivenTesting
             IWebDriver driver = new OpenQA.Selenium.Chrome.ChromeDriver();
             driver.Url = url;
          String  aTitle = driver.Title;
+            Console.WriteLine(aTitle);
             try
             {
                 Assert.IsTrue(aTitle.Contains(eTitle));
