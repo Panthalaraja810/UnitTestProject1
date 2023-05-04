@@ -18,38 +18,44 @@ namespace UnitTestProject1.ObjectRepository.Tests.LoginPage
         IWebDriver driver;
         IWebDriverUtilities webDriverUtilities = new IWebDriverUtilities(); //initializing the webdriver utilities
         ExcelUtilities excelUtilities = new ExcelUtilities();
-        String eTitle = "actiTIME - Enter Time-Track";
+        String eTitle = "actiTIME - Enter Time-Track"; //expected title
+
+        [TestInitialize]
+        public void InitializaTest() //test initializer method
+        {
+            driver = new ChromeDriver(); //opening the browser
+        }
 
         [TestCleanup]
         public void TestCleanupMethod()
         {
-            driver.Close();
-            driver.Dispose();
+            driver.Close(); //closing the browser
+            driver.Dispose(); //clean
         }
 
         [TestMethod]
         [TestCategory("LoginPage")]
         public void VerificationOfTest()
         {
-            driver = new ChromeDriver(); //opening the browser
+           
 
             LoginPageElements loginPageElements = new LoginPageElements(driver);
             webDriverUtilities.ImplicitlyWait(driver, 10);
             webDriverUtilities.MaximizeWindow(driver);
-            String Url = excelUtilities.excelData(0, 1);
-            driver.Navigate().GoToUrl(Url);
+            String Url = excelUtilities.excelData(0, 1); //fetching url from excelsheet
+            driver.Navigate().GoToUrl(Url); //go to Url actiTIME
             
 
-            String Username =  excelUtilities.excelData(1, 1);
-            String Password = excelUtilities.excelData(2, 1);
-            loginPageElements.Login(Username, Password);
+            String Username =  excelUtilities.excelData(1, 1); //fetching username from excelsheet
+            String Password = excelUtilities.excelData(2, 1); //fetching password from excel sheet
+            loginPageElements.Login(Username, Password);  //Login method to login to actiTIME
             Thread.Sleep(6000);
-           webDriverUtilities.ExplicitWait(driver, 10);
+           webDriverUtilities.ExplicitWait(driver, 10); //explicit wait
 
             String aTitle = driver.Title;
             Console.WriteLine(aTitle);
             Console.WriteLine(eTitle);
-            Assert.AreEqual(eTitle,aTitle);
+            Assert.AreEqual(eTitle,aTitle); //assert statement to compare the expected and actual title
           
         }
 
