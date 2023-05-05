@@ -37,19 +37,16 @@ namespace UnitTestProject1.ObjectRepository.Tests.LoginPage
         [TestCategory("LoginPage")]
         public void VerificationOfTest()
         {
-           
-
             LoginPageElements loginPageElements = new LoginPageElements(driver);
-            webDriverUtilities.ImplicitlyWait(driver, 10);
+            webDriverUtilities.ImplicitlyWait(driver, 10); //implicit wait
             webDriverUtilities.MaximizeWindow(driver);
             String Url = excelUtilities.excelData(0, 1); //fetching url from excelsheet
-            driver.Navigate().GoToUrl(Url); //go to Url actiTIME
-            
+              driver.Navigate().GoToUrl(Url); //go to Url actiTIME
+           // driver.Url = "Url"; 
 
             String Username =  excelUtilities.excelData(1, 1); //fetching username from excelsheet
             String Password = excelUtilities.excelData(2, 1); //fetching password from excel sheet
             loginPageElements.Login(Username, Password);  //Login method to login to actiTIME
-            Thread.Sleep(6000);
            webDriverUtilities.ExplicitWait(driver, 10); //explicit wait
 
             String aTitle = driver.Title;
