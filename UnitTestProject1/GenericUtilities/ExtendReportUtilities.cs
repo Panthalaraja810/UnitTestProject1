@@ -25,11 +25,15 @@ namespace UnitTestProject1.GenericUtilities
 
         [TestMethod]
         [TestCategory("ExtentHtmlReporter")]
-        public void Medium() 
+        [DataTestMethod]
+        [DataRow("https://www.facebook.com/", "Facebook")]
+        [DataRow("https://medium.com/", "Medium")]
+        [DataRow("https://www.bbc.com/", "BBC")]
+        public void Medium(String URL, String Title) 
         {
             extentTest =extentReports.CreateTest("Medium");
 
-            driver.Navigate().GoToUrl("https://medium.com/");
+            driver.Navigate().GoToUrl(URL);
 
            ITakesScreenshot takeScreenShot= (ITakesScreenshot)driver;
 
@@ -39,25 +43,7 @@ namespace UnitTestProject1.GenericUtilities
 
              extentTest.Log(Status.Info, "medium screenshot");
 
-            bool condition = false;
-            if(condition==true)
-            {
-                Assert.IsTrue(true) ;
-                extentTest.Pass("test pass");
-            }
-            else
-            {
-                try
-                {
-                    Assert.IsTrue(false);
-                }
-                catch(Exception e)
-                {
-                    extentTest.Fail("test failed");
-                }
-
-
-            }
+            
 
         }
 

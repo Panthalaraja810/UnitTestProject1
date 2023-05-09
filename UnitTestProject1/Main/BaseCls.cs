@@ -11,12 +11,17 @@ namespace UnitTestProject1.Main
     {
        public IWebDriver driver;
         public static ExtentReports extentReports;
-        public ExtentTest extentTest;
-        public string screenShotPath;
-      //  public static BaseCls instance=new BaseCls();
+        public ExtentTest extentTest = extentReports.CreateTest("ACTITIME");
+        public static string screenShotPath;
         public static ExtentHtmlReporter extentHtmlReporter;
         public static string testResultPath = "C:\\Users\\panth\\source\\repos\\UnitTestProject1\\UnitTestProject1\\GenericUtilities\\Reports\\";
+        public TestContext testContext;
 
+        public TestContext Test
+        {
+            get { return testContext; }
+            set { testContext = value; }
+        }
 
         [AssemblyInitialize]
         public static void AssemblyInitializeMethod(TestContext testContext)

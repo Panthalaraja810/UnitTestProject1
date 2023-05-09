@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿    using AventStack.ExtentReports;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using System;
 using System.Collections.Generic;
@@ -8,8 +9,9 @@ using System.Threading.Tasks;
 
 namespace UnitTestProject1.GenericUtilities
 {
-    public class IWebDriverUtilities
+    public class IWebDriverUtilities 
     {
+        ExtentTest extentTest;
         public void ImplicitlyWait(IWebDriver driver, long time)
         {
             driver.Manage().Timeouts().ImplicitWait=TimeSpan.FromSeconds(time);
@@ -26,6 +28,15 @@ namespace UnitTestProject1.GenericUtilities
         public void MaximizeWindow(IWebDriver driver)
         {
             driver.Manage().Window.Maximize();
+        }
+
+        public void ScreenShot(IWebDriver driver)
+        {
+            ITakesScreenshot takeScreenShot = (ITakesScreenshot)driver;
+
+            Screenshot screenShot = takeScreenShot.GetScreenshot();
+            Main.BaseCls.screenShotPath = "C:\\Users\\panth\\source\\repos\\UnitTestProject1\\UnitTestProject1\\GenericUtilities\\ScreenShot\\screens.png";
+            screenShot.SaveAsFile(Main.BaseCls.screenShotPath, ScreenshotImageFormat.Png);
         }
 
     }

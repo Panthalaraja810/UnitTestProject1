@@ -452,19 +452,31 @@
     <Compile Include="DataDrivenTesting\UnitTest2.cs" />
     <Compile Include="DataDrivenTesting\UnitTest3.cs" />
     <Compile Include="DataDrivenTesting\UnitTest4.cs" />
+    <Compile Include="DataDrivenTesting\New.cs" />
     <Compile Include="GenericUtilities\ExcelUtilities.cs" />
     <Compile Include="GenericUtilities\ExtendReportUtilities.cs" />
     <Compile Include="GenericUtilities\IWebDriverUtilities.cs" />
     <Compile Include="Main\BaseCls.cs" />
     <Compile Include="ObjectRepository\ActitimeLogin\LoginPageElements.cs" />
+    <Compile Include="ObjectRepository\Tasks\UnitTest1.cs" />
     <Compile Include="ObjectRepository\Tests\LoginPage\LoginPageTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestScripts\Class1.cs" />
+    <Compile Include="TestScripts\classc.cs" />
+    <Compile Include="TestScripts\FileName.cs" />
     <Compile Include="TestScripts\Practise1.cs" />
     <Compile Include="TestScripts\Practise2.cs" />
     <Compile Include="TestScripts\Practise3.cs" />
     <Compile Include="TestScripts\Practise4.cs" />
     <Compile Include="TestScripts\Practice5.cs" />
+    <Compile Include="TestScripts\Practise\UnitTest1.cs" />
+    <Compile Include="TestScripts\Practise\UnitTest2.cs" />
+    <Compile Include="TestScripts\Practise\UnitTest3.cs" />
+    <Compile Include="TestScripts\Practise\UnitTest4.cs" />
+    <Compile Include="TestScripts\Practise\UnitTest5.cs" />
     <Compile Include="TestScripts\UnitTest1.cs" />
+    <Compile Include="TestScripts\UnitTest2.cs" />
+    <Compile Include="TestScripts\UnitTest3.cs" />
     <Compile Include="TestScripts\UnitTest5.cs" />
   </ItemGroup>
   <ItemGroup>
