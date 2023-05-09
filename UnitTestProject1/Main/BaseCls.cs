@@ -9,9 +9,9 @@ namespace UnitTestProject1.Main
     [TestClass]
     public class BaseCls
     {
-       public IWebDriver driver;
+       public static IWebDriver driver;
         public static ExtentReports extentReports;
-        public ExtentTest extentTest = extentReports.CreateTest("ACTITIME");
+        public ExtentTest extentTest;
         public static string screenShotPath;
         public static ExtentHtmlReporter extentHtmlReporter;
         public static string testResultPath = "C:\\Users\\panth\\source\\repos\\UnitTestProject1\\UnitTestProject1\\GenericUtilities\\Reports\\";
@@ -27,7 +27,6 @@ namespace UnitTestProject1.Main
         public static void AssemblyInitializeMethod(TestContext testContext)
         {
             extentReports = new ExtentReports();
-
             extentHtmlReporter = new ExtentHtmlReporter(testResultPath);
             extentHtmlReporter.Start();
             extentReports.AttachReporter(extentHtmlReporter);

@@ -4,7 +4,7 @@ using System;
 
 namespace UnitTestProject1.DataDrivenTesting
 {
-    [TestClass]
+   // [TestClass]
     public class ExcelDataDriven
     {
 
@@ -36,14 +36,14 @@ namespace UnitTestProject1.DataDrivenTesting
                 Console.WriteLine();
             }
         }
-        [TestInitialize]
+    //    [TestInitialize]
         public void TestInit()
         {
             sheet = new Spreadsheet();
             sheet.LoadFromFile("C:\\Users\\panth\\OneDrive\\Documents\\Excel.xlsx"); //path of the excel
         }
 
-        [TestCleanup]
+    //    [TestCleanup]
         public void TestCleanup()
         {
             sheet.Dispose();

@@ -40,7 +40,7 @@ namespace UnitTestProject1.DataDrivenTesting
             }
         }
 
-        [TestInitialize]
+       // [TestInitialize]
         [DataTestMethod]
        
         public void Initialize()

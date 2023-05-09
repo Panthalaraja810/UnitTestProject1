@@ -30,7 +30,7 @@ namespace UnitTestProject1.GenericUtilities
             driver.Manage().Window.Maximize();
         }
 
-        public void ScreenShot(IWebDriver driver)
+        public static void ScreenShot(IWebDriver driver)
         {
             ITakesScreenshot takeScreenShot = (ITakesScreenshot)driver;
 

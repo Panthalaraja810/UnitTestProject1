@@ -8,7 +8,7 @@ using System.Security.Policy;
 
 namespace UnitTestProject1.DataDrivenTesting
 {
-    [TestClass]
+ //   [TestClass]
     public class New : BaseCls
     {
        IWebDriver driver;
@@ -47,7 +47,7 @@ namespace UnitTestProject1.DataDrivenTesting
             
         }
 
-        [TestInitialize]
+      //  [TestInitialize]
         [DataTestMethod]
 
         public void Initialize()

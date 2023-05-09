@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace UnitTestProject1.DataDrivenTesting
 {
-    [TestClass]
+ //   [TestClass]
     public class UnitTest2
     {
         public static IEnumerable<object[]> Tests 

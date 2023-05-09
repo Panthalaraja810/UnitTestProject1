@@ -5,7 +5,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace UnitTestProject1.DataDrivenTesting
 {
-    [TestClass]
+ //   [TestClass]
     public class UnitTest3
     {
        

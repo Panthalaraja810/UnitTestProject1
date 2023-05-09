@@ -5,6 +5,7 @@ using OpenQA.Selenium.Chrome;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -17,21 +18,21 @@ namespace UnitTestProject1.ObjectRepository.Tests.LoginPage
     [TestClass]
     public class LoginPageTest : BaseCls
     {
-       // public IWebDriver driver;
-        IWebDriverUtilities webDriverUtilities = new IWebDriverUtilities(); //initializing the webdriver utilities
+       IWebDriverUtilities webDriverUtilities = new IWebDriverUtilities(); //initializing the webdriver utilities
         ExcelUtilities excelUtilities = new ExcelUtilities();
-        String eTitle = "actiTIME - Enter Time-Track1"; //expected title
+     //   String eTitle = "actiTIME - Enter Time-Track1"; //expected title
   
         [TestInitialize]
         public void InitializaTest() //test initializer method
         {
-            driver = new ChromeDriver(); //opening the browser
+            //opening the browser
+            driver = new ChromeDriver();
         }
 
         [TestCleanup]
         public void TestCleanupMethod()
         {
-            driver.Close(); //closing the browser
+            driver.Quit(); //closing the browser
             driver.Dispose(); //clean
           //invalid arguments
         }
@@ -81,40 +82,38 @@ namespace UnitTestProject1.ObjectRepository.Tests.LoginPage
         
         
         [TestMethod]
-        [TestCategory("ExtentHtmlReporter")]
         [DataTestMethod]
+        [TestCategory("ExtentHtmlReporter")]
         [DataRow("https://www.facebook.com/", "Facebook – log in or sign up")]
-        [DataRow("https://medium.com/", "Medium")]
+        [DataRow("https://medium.com/", "Medium32e")]
         [DataRow("https://www.bbc.com/", "BBC - Homepage")]
         public void DataRowAndDataDriven(String url, String eTitle)
         {
-        //    var screenShotPath = "C:\\Users\\panth\\source\\repos\\UnitTestProject1\\UnitTestProject1\\GenericUtilities\\ScreenShot\\screens.png";
-            extentTest = extentReports.CreateTest(url+eTitle+"Test");
-
-
-            driver.Navigate().GoToUrl(url);
+           
+            driver.Url = url;
+           webDriverUtilities.ImplicitlyWait(driver, 10);
             String aTitle = driver.Title;
+            extentTest = extentReports.CreateTest(url + eTitle + "Test");
+            extentTest.Info(url + aTitle);
             Console.WriteLine(aTitle);
             Console.WriteLine(eTitle);
             try
             {
-                // Assert.IsTrue(aTitle.Contains(eTitle));
-              Assert.AreEqual(eTitle, aTitle);
-             //   Assert.IsFalse(false);
-            // Assert.Fail();
+                Assert.AreEqual(eTitle, aTitle);
+                extentTest.Pass("passed");    
             }
             catch (Exception e)
             {
-               // extentTest.AddScreenCaptureFromPath(screenShotPath); //invalid arguments
-
-                extentTest.Log(Status.Fail,url+aTitle+"Page screenshot");
-               webDriverUtilities.ScreenShot(driver);
+                extentTest.Fail("failed");
+                extentTest.Info(e);
+                IWebDriverUtilities.ScreenShot(driver);
                 extentTest.AddScreenCaptureFromPath(screenShotPath);
             }
+            
         }
 
 
-  
+
 
     }
 }

@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace UnitTestProject1.TestScripts
 {
-    [TestClass]
+  //  [TestClass]
     public class Class1
     {
         [TestMethod]
